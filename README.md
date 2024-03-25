@@ -5,3 +5,9 @@ E-commerce retail data analysis refers to the process of examining and interpret
 
 # Customers:
 This file contains the information about the customers and lists basi. There are 4 attributes in the customer table are customer_Id, Gender, DOB, city_code. In this table there are 4 columns and 5647 rows.
+
+# Transactions: 
+A transaction file is used to hold data during transaction processing. In this transaction table there are 10 variables and 23054 records. The variables are transaction_id, cust_id, tran_date, prod_subcat_code, prod_cat_code, Qty, Rate, Tax, total_amt, store_type. This file is collected on an ongoing basis as part of an organizations daily business operations. The data is often associated with customer sales , payments type, product categories which are used for the whole project analysis.
+
+# Product category info:
+This file contains the information about the  product categories and subproduct categories. There are 4 attributes and 23 rows in the product category table.
