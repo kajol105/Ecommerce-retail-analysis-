@@ -21,7 +21,7 @@ Create DATABASE DB_ecommerceanalysis;
 USE DB_ecommerceanalysis;
 
 # Organizational Objecives
-# 1 Total number of rows in each of the 3 tables in the database
+## 1 Total number of rows in each of the 3 tables in the database
 
 SELECT COUNT(*) AS total_no_of_transactions FROM transactions;
 
@@ -29,7 +29,7 @@ SELECT COUNT(*) AS total_no_of_transactions FROM transactions;
 SELECT COUNT(*) AS total_no_of_customers FROM customers;
 SELECT COUNT(*) AS total_no_of_category FROM prod_category;
 
-# 2 The total number of transactions that have a return
+## 2 The total number of transactions that have a return
 
 SELECT COUNT(transaction_id) AS return_s
 FROM transactions
@@ -62,14 +62,20 @@ WHERE prod_subcat = 'DIY';
 
 # Data Interpretation
 
-# 1 Which channel is most frequently used for transactions?
+## 1 Which channel is most frequently used for transactions?
 
 SELECT  COUNT(store_type) AS fre_trans,Store_type
 FROM transactions
 GROUP BY store_type
 ORDER BY COUNT(store_type) DESC;
 
-# 2 What is the count of male and female customers in the database?
+
+
+![Screenshot (525)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/29a0dfe2-e2ce-4abb-a341-29758f11db80)
+
+
+
+## 2 What is the count of male and female customers in the database?
 
 SELECT Gender, COUNT(Gender) AS count_genders
 FROM customers
@@ -78,13 +84,6 @@ GROUP BY Gender;
 
 
 ![Screenshot (523)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/25b842ec-1e52-4868-8249-ed9dd81f46b8)
-
-
-
-
-
-
-
 
 
 
