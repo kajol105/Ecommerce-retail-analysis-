@@ -25,15 +25,29 @@ USE DB_ecommerceanalysis;
 
 SELECT COUNT(*) AS total_no_of_transactions FROM transactions;
 
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/2a14d7a2-4fcf-43fa-b0e2-91c6dc52e482)
+
 
 SELECT COUNT(*) AS total_no_of_customers FROM customers;
+
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/88cb9d83-edb9-4299-a4da-defee2e743cb)
+
+
 SELECT COUNT(*) AS total_no_of_category FROM prod_category;
+
+![Screenshot (552)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/59dd6d30-77ab-4f0d-bfa7-8d2d51ca049a)
+
+
 
 ## 2 The total number of transactions that have a return
 
 SELECT COUNT(transaction_id) AS return_s
 FROM transactions
 WHERE QTY < 0;
+
+![Screenshot (553)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/dcec037b-766c-48d4-a8ec-5321fe645496)
+
+
 
 # 3 As you would have noticed, the dates provided across the datasets are not 
 # in a correct format. As first steps, please convert the date variables into valid date formats
@@ -53,11 +67,22 @@ drop tran_date;
 SELECT * FROM transactions;
 
 
+#  4 What is the time range of the transaction data available for analysis? Show the output in number of days, months and years simuntaneously in different columns.
+SELECT new_date,CURDATE(),month(CURDATE()),day(new_date),year(new_date) FROM transactions;
+SELECT MIN(new_date) AS minimum_date, MAX(new_date) as maximum_date FROM transactions;
+
+![Screenshot (554)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/aef35889-4f0b-44c8-bb0d-78c541f34aa5)
+
+
+![Screenshot (555)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/d8355aa3-4967-4592-8c3f-916e75255c77)
+
+
 # 5 Which product category does the sub-category "DIY" belong to?
 
 SELECT * FROM prod_category
 WHERE prod_subcat = 'DIY';
 
+![Screenshot (556)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/990cd199-9746-4643-8209-df0dee24d016)
 
 
 # Data Interpretation
