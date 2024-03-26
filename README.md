@@ -122,12 +122,19 @@ FROM customers
 GROUP BY city_code
 ORDER BY COUNT(customer_Id) DESC LIMIT 1;
 
+![Screenshot (528)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/2c63ac3a-4bb1-48f2-9c40-c7d6bf858890)
+
+
 # 4 How many sub_categories are there under the Books category?
 
 SELECT prod_cat, COUNT(prod_subcat) AS count_subcat
 FROM prod_category
 WHERE prod_cat = 'Books'
 GROUP BY prod_cat;
+
+
+
+
 
 # 5 What is the maximum quantity of products ever ordered?
 
