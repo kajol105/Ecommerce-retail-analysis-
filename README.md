@@ -90,32 +90,6 @@ GROUP BY Gender;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 3  From which city do we have the maximun number of customers and how many?
 select city_code, COUNT(customer_Id) AS max_no_customers
 FROM customers
@@ -133,6 +107,7 @@ WHERE prod_cat = 'Books'
 GROUP BY prod_cat;
 
 
+![Screenshot (531)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/94230c71-ee2c-4fda-adda-ef8e78c6ad15)
 
 
 
@@ -141,6 +116,15 @@ GROUP BY prod_cat;
 SELECT QTY AS 'maximum product sold', transaction_Id FROM transactions
 WHERE QTY > 0
 ORDER BY QTY DESC;
+
+
+![Screenshot (534)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/f6b3d4f1-d556-45c7-8a4e-bb4412701a34)
+
+
+
+
+
+
 
 # 6 What is the total revenue generated in categories electronics and books?
 select * from transactions;
@@ -156,9 +140,14 @@ ON A.prod_cat_code = B.prod_cat_code
 WHERE prod_cat IN('Electronics','Books')
 GROUP BY prod_cat;
 
+
+![Screenshot (535)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/7e2fb2a2-7868-4f8e-a417-5fb17c19cc54)
+
+
+
 # 7 How many customers have > 10 transactions with us, excluding returns?
 SELECT * FROM transactions;
-SELECT * FROM custtomers;
+SELECT * FROM customers;
 
 ALTER TABLE customers
 DROP MyUnknownColumn;
@@ -172,6 +161,10 @@ INNER JOIN transactions B
 ON A.customer_id = B.cust_id
 GROUP BY customer_Id
 HAVING COUNT( DISTINCT transaction_id)>10;
+
+![WhatsApp Image 2024-03-26 at 7 26 09 PM](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/9881e8e4-571c-4337-ac0f-73dc04ccc603)
+
+
 
 # 8 What is the combined revenue earned from the 'Electronics' and 'Clothing' categories, from 'flagship stores'?
 
