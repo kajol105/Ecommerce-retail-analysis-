@@ -177,6 +177,12 @@ ON T.prod_cat_code = P.prod_cat_code
 AND T.prod_subcat_code = P.prod_sub_cat_code
 WHERE prod_cat IN('Clothing','Electronics') AND Store_type = 'Flagship store';
 
+
+
+![Screenshot (536)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/0a147347-af5c-462c-9052-6d7c44834c1b)
+
+
+
 # Question no. 9 What is the total revenue generated from 'Male' customers in 'Electronics' category? Output should display total revenue by prod sub-cat
 
 SELECT * FROM transactions T
@@ -184,6 +190,11 @@ JOIN prod_category P
 ON T.prod_subcat_code = P.prod_sub_cat_code
 RIGHT JOIN customers C 
 ON C.customer_Id = T.cust_id;
+
+![Screenshot (537)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/aba26af1-f81b-45fd-8888-4af284fc24a0)
+
+![Screenshot (538)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/b6b76f4a-383d-407b-87b3-c21762335c40)
+
 
 SELECT Gender,prod_cat,SUM(total_amt) AS total_revenue FROM transactions T 
 JOIN prod_category P
@@ -193,6 +204,8 @@ ON C.customer_Id = T.cust_id
 WHERE Gender = 'M'
 GROUP BY prod_cat
 HAVING prod_cat LIKE 'Electronics';
+
+
 
 # 10  What is the percenateg of sales and returns by product sub category; display only top  5 sub categories in terms of sales?
  
