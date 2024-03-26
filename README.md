@@ -76,6 +76,47 @@ FROM customers
 Where Gender IS NOT NULL
 GROUP BY Gender;
 
+
+![Screenshot (523)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/25b842ec-1e52-4868-8249-ed9dd81f46b8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 3  From which city do we have the maximun number of customers and how many?
 select city_code, COUNT(customer_Id) AS max_no_customers
 FROM customers
