@@ -21,11 +21,20 @@ Create DATABASE DB_ecommerceanalysis;
 USE DB_ecommerceanalysis;
 
 # Organizational Objecives
-## 1 Total number of rows in each of the 3 tables in the database
-
+----------------------------------------------------------------------------------------------------------------------------
+### 1 Total number of rows in each of the 3 tables in the database
+----------------------------------------------------------------------------------------------------------------------------
 SELECT COUNT(*) AS total_no_of_transactions FROM transactions;
 
+
+
+
 ![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/2a14d7a2-4fcf-43fa-b0e2-91c6dc52e482)
+
+
+
+
+
 
 
 SELECT COUNT(*) AS total_no_of_customers FROM customers;
@@ -87,7 +96,7 @@ WHERE prod_subcat = 'DIY';
 
 # Data Interpretation
 
-## 1 Which channel is most frequently used for transactions?
+### 1 Which channel is most frequently used for transactions?
 
 SELECT  COUNT(store_type) AS fre_trans,Store_type
 FROM transactions
@@ -100,6 +109,10 @@ ORDER BY COUNT(store_type) DESC;
 
 
 
+Here, from the above solution, the most frequently used channel is e-Shop with a count of 4595. Second the most 
+used store_type is flagship store with 2301 buyers.
+
+
 ## 2 What is the count of male and female customers in the database?
 
 SELECT Gender, COUNT(Gender) AS count_genders
@@ -108,9 +121,12 @@ Where Gender IS NOT NULL
 GROUP BY Gender;
 
 
+
+
 ![Screenshot (523)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/25b842ec-1e52-4868-8249-ed9dd81f46b8)
 
-
+This SQL query selects he gender column from the customers table and count the occurences of gender value.
+The COUNT function used here to count the number of unique values in the column and to  the find "Customer Gender Analysis" with the GROUP BY function 
 
 
 
@@ -123,6 +139,7 @@ ORDER BY COUNT(customer_Id) DESC LIMIT 1;
 
 ![Screenshot (528)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/2c63ac3a-4bb1-48f2-9c40-c7d6bf858890)
 
+This sql query selects the city_code Column from the customers table and count the number of customers through customer_id column for each city. It then orders the results by count of customers in descending order and limits the result to only the first row, which is giving the city with maximum number of customers.
 
 # 4 How many sub_categories are there under the Books category?
 
