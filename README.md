@@ -113,7 +113,7 @@ Here, from the above solution, the most frequently used channel is e-Shop with a
 used store_type is flagship store with 2301 buyers.
 
 
-## 2 What is the count of male and female customers in the database?
+### 2 What is the count of male and female customers in the database?
 
 SELECT Gender, COUNT(Gender) AS count_genders
 FROM customers
@@ -143,24 +143,52 @@ This sql query selects the city_code Column from the customers table and count t
 
 # 4 How many sub_categories are there under the Books category?
 
-SELECT prod_cat, COUNT(prod_subcat) AS count_subcat
+SELECT prod_cat, prod_subcat 
 FROM prod_category
 WHERE prod_cat = 'Books'
-GROUP BY prod_cat;
+GROUP BY prod_subcat;
 
 
-![Screenshot (531)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/94230c71-ee2c-4fda-adda-ef8e78c6ad15)
+
+
+
+![Screenshot (558)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/b8368c22-0354-447f-8c84-0f368bb73aba)
+
+
+
+
+
+According to the result 6 sub categories are there under the books category.They are Fiction, Academic, Non-Fiction, Children, Comics and DIY. In this objective Where is used for filtering the data and GROUP BY used for grouping the identical recors together.
+
+
+
 
 
 
 # 5 What is the maximum quantity of products ever ordered?
 
-SELECT QTY AS 'maximum product sold', transaction_Id FROM transactions
-WHERE QTY > 0
-ORDER BY QTY DESC;
+SELECT P.prod_cat, COUNT(qty) AS no_product_category 
+FROM Transactions T
+JOIN prod_category P
+ON T.prod_subcat_code = P.prod_sub_cat_code GROUP BY P.prod_cat;
 
 
-![Screenshot (534)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/f6b3d4f1-d556-45c7-8a4e-bb4412701a34)
+
+
+
+
+
+![Screenshot (559)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/87a1c8f4-e6b3-44ae-8a42-9edca9823b15
+
+
+
+
+
+The query joins 'Transactions' with 'prod_category' to count products by category. Grouped by product category (P.prod_cat), it provides insights into the distribution of product categories based on the quantity of transactions. This analysis aids in understanding purchasing patterns and helps optimize inventory for different product categories to enhance sales and customer satisfaction.
+
+
+
+
 
 
 
@@ -187,12 +215,14 @@ GROUP BY prod_cat;
 
 
 
-# 7 How many customers have > 10 transactions with us, excluding returns?
-SELECT * FROM transactions;
-SELECT * FROM customers;
 
-ALTER TABLE customers
-DROP MyUnknownColumn;
+
+According to the result the total revenue generated in categories Electronics and Books are 27130794.27
+36592713.68 . In this objective Sum is used for find the net total revenue. LEFT JOIN  is used for joining  the two table Transactons and Prod_category, Where is used for filter the data and GROUP BY is used to club together the identical rows present in the prod_cat column.
+
+
+
+### 7 How many customers have > 10 transactions with us, excluding returns?
 
 SELECT * FROM custtomers A
 INNER JOIN transactions B
@@ -208,10 +238,13 @@ HAVING COUNT( DISTINCT transaction_id)>10;
 
 
 
+
+This query generates the 6 customers are having greater than 10 transactions, excluding the returns. Having clause is used in this query to filter the data with the given condition.
+
+
+
 # 8 What is the combined revenue earned from the 'Electronics' and 'Clothing' categories, from 'flagship stores'?
 
-SELECT * FROM prod_category;
-SELECT * FROM transactions;
 
 SELECT SUM(total_amt) AS amount FROM transactions T
 INNER JOIN prod_category P
@@ -222,6 +255,11 @@ WHERE prod_cat IN('Clothing','Electronics') AND Store_type = 'Flagship store';
 
 
 ![Screenshot (536)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/0a147347-af5c-462c-9052-6d7c44834c1b)
+
+
+
+The query calculates the total revenue from transactions table  related to 'electronics' and 'clothing' product categories, specifically for the 'Flagship store' store type.  The result 1859142.6099999999 is the combined revenue earned from the "Electronics "and "Clothing"categories from "Flagship store". In this query  inner Join is used for joining the two table transactons and prod_category with the help of same columns, it provides insights into revenue generated from these categories at flagship stores.
+
 
 
 
@@ -250,6 +288,11 @@ HAVING prod_cat LIKE 'Electronics';
 
 
 ![Screenshot (539)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/6de5cd37-fb17-4160-9d66-077f9a3c016e)
+
+
+
+
+ The total revenue generated from this query is 1845889.2400000007 from 'Male' customers in 'Electronics' .In this objective Sum is used for find the total revenue. Right Join is used for join the two table Transactons and Customers. Where is used for filter the data.
 
 
 # 10  What is the percenateg of sales and returns by product sub category; display only top  5 sub categories in terms of sales?
@@ -283,7 +326,17 @@ ROUND(((sales/(returns_v+sales))*100),2) AS Sales_percent from perABS;
 ![Screenshot (541)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/cda8b82f-2239-4b7f-8f60-4e50225c318a)
 
 
-# Question NO. 11 Finding the total revenue generated by customers aged 25 to 35 in the last 30 days of transactions
+
+
+
+
+According to the result we get top 5 percentage of sale and returns by product sub category such as Women, Mens, Comics, Children and Academic. In this objective CTEs are used for finding the solution. inner Join is used for join the two table Transactons and Prod_category. Where is used for filtering the data. Group by and Order by are used for sorting the data.
+
+
+
+
+
+### Question NO. 11 Finding the total revenue generated by customers aged 25 to 35 in the last 30 days of transactions
 
 alter table customers
  add  new_DOB date;
@@ -314,6 +367,12 @@ select sum(Total_amount) as final_revenue from ABC;
 ![Screenshot (542)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/8b8d1170-35c0-4872-b6d3-43f34e7e1a07)
 
 
+This  query calculates the total revenue generated from transactions by customers aged between 25 and 35 years old, considering the top 30 transaction dates based on total amount. We are using here, Common Table Expression (CTE) named 'ABC' to first identify the top transaction dates within the specified age range. The main query then sums up the 'Total_amount' from the CTE to provide the final revenue generated from this customer segment. 
+
+
+
+
+
 
 # 12 Which product category has seen the maximum value of returns int the last 3 months of transactions 
 
@@ -332,7 +391,16 @@ SELECT ABS(SUM(total_amt)) AS return_amount_cat FROM ABC;
 
 ![Screenshot (543)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/f8bb7497-b28d-4617-9bf2-567c928d84c2)
 
-# Question NO.13 Which store type sells the maximum products : by the value of sales amount and quantity sold
+
+This result is showing that the Home and kitchen has the maximum value of returns in the last 3 months of transactions. In this query Inner Join is used for join the two table Transactons and Prod_category. Where is used for filtering the data. Group by used for sorting the data,ABS is used for finding the absolute amount from the total_amount.
+
+
+
+
+
+
+
+### Question NO.13 Which store type sells the maximum products : by the value of sales amount and quantity sold
 
 SELECT store_type,COUNT(QTY) AS no_of_quantity, SUM(total_amt) AS total_sales FROM transactions
 WHERE total_amt > 0
@@ -345,7 +413,12 @@ LIMIT 1;
 
 
 
-# Business Objective : What are the categories for which average revenue is above the overall average
+
+This query shows the e-shop store type with the highest number of sold products and corresponding total sales amount from the 'Transactions' table. It filters transactions where the total amount is greater than zero to focus on successful sales. The results are grouped by store type and sorted in descending order based on the number of products sold
+
+
+
+### Business Objective : What are the categories for which average revenue is above the overall average
 
 SELECT prod_cat,ROUND(AVG(total_amt)) FROM transactions T
 INNER JOIN prod_category P
@@ -368,6 +441,17 @@ HAVING AVG(total_amt) > (SELECT AVG(total_amt) FROM transactions)
 ORDER BY averages DESC;
 
 ![Screenshot (546)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/934efe91-fd1f-4948-898a-d8fb6f29cdfe)
+
+
+
+
+
+
+
+
+
+
+
 
 # Business Objective: Find the average revenue by each subcategory for the categories which among the top 5 categories in terms of quanity sold
 
