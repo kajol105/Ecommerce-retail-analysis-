@@ -48,7 +48,7 @@ SELECT COUNT(*) AS total_no_of_category FROM prod_category;
 
 
 
-## 2 The total number of transactions that have a return
+### 2 The total number of transactions that have a return
 
 SELECT COUNT(transaction_id) AS return_s
 FROM transactions
@@ -58,9 +58,9 @@ WHERE QTY < 0;
 
 
 
-# 3 As you would have noticed, the dates provided across the datasets are not 
-# in a correct format. As first steps, please convert the date variables into valid date formats
-# before proceeding ahead
+### 3 As you would have noticed, the dates provided across the datasets are not 
+### in a correct format. As first steps, please convert the date variables into valid date formats
+### before proceeding ahead
 
 ALTER TABLE transactions
 ADD new_date date;
@@ -76,7 +76,7 @@ drop tran_date;
 SELECT * FROM transactions;
 
 
-#  4 What is the time range of the transaction data available for analysis? Show the output in number of days, months and years simuntaneously in different columns.
+###  4 What is the time range of the transaction data available for analysis? Show the output in number of days, months and years simuntaneously in different columns.
 SELECT new_date,CURDATE(),month(CURDATE()),day(new_date),year(new_date) FROM transactions;
 SELECT MIN(new_date) AS minimum_date, MAX(new_date) as maximum_date FROM transactions;
 
@@ -86,7 +86,7 @@ SELECT MIN(new_date) AS minimum_date, MAX(new_date) as maximum_date FROM transac
 ![Screenshot (555)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/d8355aa3-4967-4592-8c3f-916e75255c77)
 
 
-# 5 Which product category does the sub-category "DIY" belong to?
+### 5 Which product category does the sub-category "DIY" belong to?
 
 SELECT * FROM prod_category
 WHERE prod_subcat = 'DIY';
@@ -131,7 +131,7 @@ The COUNT function used here to count the number of unique values in the column 
 
 
 
-# 3  From which city do we have the maximun number of customers and how many?
+### 3  From which city do we have the maximun number of customers and how many?
 select city_code, COUNT(customer_Id) AS max_no_customers
 FROM customers
 GROUP BY city_code
@@ -141,7 +141,7 @@ ORDER BY COUNT(customer_Id) DESC LIMIT 1;
 
 This sql query selects the city_code Column from the customers table and count the number of customers through customer_id column for each city. It then orders the results by count of customers in descending order and limits the result to only the first row, which is giving the city with maximum number of customers.
 
-# 4 How many sub_categories are there under the Books category?
+### 4 How many sub_categories are there under the Books category?
 
 SELECT prod_cat, prod_subcat 
 FROM prod_category
@@ -165,7 +165,7 @@ According to the result 6 sub categories are there under the books category.They
 
 
 
-# 5 What is the maximum quantity of products ever ordered?
+### 5 What is the maximum quantity of products ever ordered?
 
 SELECT P.prod_cat, COUNT(qty) AS no_product_category 
 FROM Transactions T
@@ -196,7 +196,7 @@ The query joins 'Transactions' with 'prod_category' to count products by categor
 
 
 
-# 6 What is the total revenue generated in categories electronics and books?
+### 6 What is the total revenue generated in categories electronics and books?
 select * from transactions;
 select * from prod_category;
 
@@ -243,7 +243,7 @@ This query generates the 6 customers are having greater than 10 transactions, ex
 
 
 
-# 8 What is the combined revenue earned from the 'Electronics' and 'Clothing' categories, from 'flagship stores'?
+### 8 What is the combined revenue earned from the 'Electronics' and 'Clothing' categories, from 'flagship stores'?
 
 
 SELECT SUM(total_amt) AS amount FROM transactions T
@@ -263,7 +263,7 @@ The query calculates the total revenue from transactions table  related to 'elec
 
 
 
-# Question no. 9 What is the total revenue generated from 'Male' customers in 'Electronics' category? Output should display total revenue by prod sub-cat
+### Question no. 9 What is the total revenue generated from 'Male' customers in 'Electronics' category? Output should display total revenue by prod sub-cat
 
 SELECT * FROM transactions T
 JOIN prod_category P
@@ -295,7 +295,7 @@ HAVING prod_cat LIKE 'Electronics';
  The total revenue generated from this query is 1845889.2400000007 from 'Male' customers in 'Electronics' .In this objective Sum is used for find the total revenue. Right Join is used for join the two table Transactons and Customers. Where is used for filter the data.
 
 
-# 10  What is the percenateg of sales and returns by product sub category; display only top  5 sub categories in terms of sales?
+### 10  What is the percenateg of sales and returns by product sub category; display only top  5 sub categories in terms of sales?
  
  SELECT (prod_subcat),SUM(total_amt) AS sales_amount FROM transactions AS T 
  INNER JOIN prod_category AS P
@@ -374,7 +374,7 @@ This  query calculates the total revenue generated from transactions by customer
 
 
 
-# 12 Which product category has seen the maximum value of returns int the last 3 months of transactions 
+### 12 Which product category has seen the maximum value of returns int the last 3 months of transactions 
 
 SELECT prod_cat,COUNT(Qty) AS No_of_returns FROM transactions T
 INNER JOIN prod_category P
@@ -453,7 +453,7 @@ ORDER BY averages DESC;
 
 
 
-# Business Objective: Find the average revenue by each subcategory for the categories which among the top 5 categories in terms of quanity sold
+### Business Objective: Find the average revenue by each subcategory for the categories which among the top 5 categories in terms of quanity sold
 
 SELECT prod_cat,COUNT(Qty) AS quantity_sold FROM transactions T 
 INNER JOIN prod_category P 
