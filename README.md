@@ -228,6 +228,7 @@ ON A.prod_cat_code = B.prod_cat_code
 WHERE prod_cat IN('Electronics','Books')
 GROUP BY prod_cat;
 
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/27672a55-d82e-4ad0-ad5a-005ef59bc437)
 
 
 
@@ -241,17 +242,27 @@ According to the result the total revenue generated in categories Electronics an
 
 ### 7 How many customers have > 10 transactions with us, excluding returns?
 
-SELECT * FROM custtomers A
+SELECT * FROM transactions;
+SELECT * FROM customers;
+
+ALTER TABLE customers
+DROP MyUnknownColumn;
+
+
+SELECT * FROM customers A
 INNER JOIN transactions B
 ON A.customer_Id = B.cust_id;
 
-SELECT customer_Id,COUNT( DISTINCT transaction_id) AS TOTAL_COUNT FROM custtomers A
+SELECT customer_Id,COUNT( DISTINCT transaction_id) AS TOTAL_COUNT FROM customers A
 INNER JOIN transactions B
 ON A.customer_id = B.cust_id
 GROUP BY customer_Id
 HAVING COUNT( DISTINCT transaction_id)>10;
 
-![WhatsApp Image 2024-03-26 at 7 26 09 PM](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/9881e8e4-571c-4337-ac0f-73dc04ccc603)
+
+
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/b47fad2c-3c20-4794-93bc-b2d299463662)
+
 
 
 
@@ -271,7 +282,8 @@ WHERE prod_cat IN('Clothing','Electronics') AND Store_type = 'Flagship store';
 
 
 
-![Screenshot (536)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/0a147347-af5c-462c-9052-6d7c44834c1b)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/1c5e28c2-4e45-4464-9a89-53d9d7663d93)
+
 
 
 
