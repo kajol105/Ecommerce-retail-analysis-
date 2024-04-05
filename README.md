@@ -58,7 +58,8 @@ SELECT COUNT(transaction_id) AS return_s
 FROM transactions
 WHERE QTY < 0;
 
-![Screenshot (553)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/dcec037b-766c-48d4-a8ec-5321fe645496)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/dbff76d7-f3ef-489f-b4fe-188474abb800)
+
 
 
 
@@ -79,15 +80,20 @@ drop tran_date;
 
 SELECT * FROM transactions;
 
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/80c61749-09ed-4f93-a156-5829f046aa0a)
+
+
+
 
 ###  4 What is the time range of the transaction data available for analysis? Show the output in number of days, months and years simuntaneously in different columns.
 SELECT new_date,CURDATE(),month(CURDATE()),day(new_date),year(new_date) FROM transactions;
 SELECT MIN(new_date) AS minimum_date, MAX(new_date) as maximum_date FROM transactions;
 
-![Screenshot (554)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/aef35889-4f0b-44c8-bb0d-78c541f34aa5)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/6348fc91-ae5c-491c-84b6-1eafe98c2e5c)
 
 
-![Screenshot (555)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/d8355aa3-4967-4592-8c3f-916e75255c77)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/0902f390-6dee-44a6-bdb7-fc9ca3bedc90)
+
 
 
 ### 5 Which product category does the sub-category "DIY" belong to?
@@ -95,7 +101,8 @@ SELECT MIN(new_date) AS minimum_date, MAX(new_date) as maximum_date FROM transac
 SELECT * FROM prod_category
 WHERE prod_subcat = 'DIY';
 
-![Screenshot (556)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/990cd199-9746-4643-8209-df0dee24d016)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/94d200a1-b6db-4b16-bd8b-bff93b4745ea)
+
 
 
 # Data Interpretation
@@ -109,7 +116,8 @@ ORDER BY COUNT(store_type) DESC;
 
 
 
-![Screenshot (525)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/29a0dfe2-e2ce-4abb-a341-29758f11db80)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/404af13d-0473-4026-afbc-55a4bf0daf08)
+
 
 
 
@@ -127,7 +135,8 @@ GROUP BY Gender;
 
 
 
-![Screenshot (523)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/25b842ec-1e52-4868-8249-ed9dd81f46b8)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/442fb7b4-d43b-4ec5-b9e1-fa696a782ff3)
+
 
 This SQL query selects he gender column from the customers table and count the occurences of gender value.
 The COUNT function used here to count the number of unique values in the column and to  the find "Customer Gender Analysis" with the GROUP BY function 
@@ -141,7 +150,8 @@ FROM customers
 GROUP BY city_code
 ORDER BY COUNT(customer_Id) DESC LIMIT 1;
 
-![Screenshot (528)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/2c63ac3a-4bb1-48f2-9c40-c7d6bf858890)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/5f15d2fc-6864-4637-8df7-0555908f9d80)
+
 
 This sql query selects the city_code Column from the customers table and count the number of customers through customer_id column for each city. It then orders the results by count of customers in descending order and limits the result to only the first row, which is giving the city with maximum number of customers.
 
@@ -156,7 +166,8 @@ GROUP BY prod_subcat;
 
 
 
-![Screenshot (558)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/b8368c22-0354-447f-8c84-0f368bb73aba)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/524610bb-5d35-4aa4-b3a2-ec0ff0a5d323)
+
 
 
 
@@ -179,10 +190,13 @@ ON T.prod_subcat_code = P.prod_sub_cat_code GROUP BY P.prod_cat;
 
 
 
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/ec36ca81-ae57-4b3c-9937-c02c51b00dc5)
+
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/dd01a6f4-a575-4198-92e6-71cde8ace2f9)
 
 
 
-![Screenshot (559)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/87a1c8f4-e6b3-44ae-8a42-9edca9823b15
+
 
 
 
@@ -215,7 +229,6 @@ WHERE prod_cat IN('Electronics','Books')
 GROUP BY prod_cat;
 
 
-![Screenshot (535)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/7e2fb2a2-7868-4f8e-a417-5fb17c19cc54)
 
 
 
