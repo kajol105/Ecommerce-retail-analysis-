@@ -29,7 +29,9 @@ SELECT COUNT(*) AS total_no_of_transactions FROM transactions;
 
 
 
-![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/2a14d7a2-4fcf-43fa-b0e2-91c6dc52e482)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/f12bad0d-0aa2-4f52-8f07-fe102f8cd5f4)
+
+
 
 
 
@@ -39,12 +41,14 @@ SELECT COUNT(*) AS total_no_of_transactions FROM transactions;
 
 SELECT COUNT(*) AS total_no_of_customers FROM customers;
 
-![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/88cb9d83-edb9-4299-a4da-defee2e743cb)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/772d6bca-ee67-45ac-af3b-719bf806765a)
+
 
 
 SELECT COUNT(*) AS total_no_of_category FROM prod_category;
 
-![Screenshot (552)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/59dd6d30-77ab-4f0d-bfa7-8d2d51ca049a)
+![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/25a5ce28-6481-469a-a84d-3fc4dda3cb7d)
+
 
 
 
