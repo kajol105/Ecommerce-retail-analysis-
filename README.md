@@ -29,7 +29,7 @@ SELECT COUNT(*) AS total_no_of_transactions FROM transactions;
 
 
 
-![image](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/f12bad0d-0aa2-4f52-8f07-fe102f8cd5f4)
+
 
 
 
