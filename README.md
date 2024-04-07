@@ -125,8 +125,8 @@ ORDER BY COUNT(store_type) DESC;
 
 
 
-Here, from the above solution, the most frequently used channel is e-Shop with a count of 4595. Second the most 
-used store_type is flagship store with 2301 buyers.
+Here, from the above solution, the most frequently used channel is e-Shop with a count of 9311. Second the most 
+used store_type is MBR store with 4611 buyers.
 
 
 ### 2 What is the count of male and female customers in the database?
@@ -239,8 +239,8 @@ GROUP BY prod_cat;
 
 
 
-According to the result the total revenue generated in categories Electronics and Books are 27130794.27
-36592713.68 . In this objective Sum is used for find the net total revenue. LEFT JOIN  is used for joining  the two table Transactons and Prod_category, Where is used for filter the data and GROUP BY is used to club together the identical rows present in the prod_cat column.
+According to the result the total revenue generated in categories Electronics and Books are 53612318.17
+76936164.24 . In this objective Sum is used for find the net total revenue. LEFT JOIN  is used for joining  the two table Transactons and Prod_category, Where is used for filter the data and GROUP BY is used to club together the identical rows present in the prod_cat column.
 
 
 
@@ -291,7 +291,7 @@ WHERE prod_cat IN('Clothing','Electronics') AND Store_type = 'Flagship store';
 
 
 
-The query calculates the total revenue from transactions table  related to 'electronics' and 'clothing' product categories, specifically for the 'Flagship store' store type.  The result 1859142.6099999999 is the combined revenue earned from the "Electronics "and "Clothing"categories from "Flagship store". In this query  inner Join is used for joining the two table transactons and prod_category with the help of same columns, it provides insights into revenue generated from these categories at flagship stores.
+The query calculates the total revenue from transactions table  related to 'electronics' and 'clothing' product categories, specifically for the 'Flagship store' store type.  The result 3409559.2700000056 is the combined revenue earned from the "Electronics "and "Clothing"categories from "Flagship store". In this query  inner Join is used for joining the two table transactons and prod_category with the help of same columns, it provides insights into revenue generated from these categories at flagship stores.
 
 
 
@@ -322,7 +322,7 @@ HAVING prod_cat LIKE 'Electronics';
 
 
 
- The total revenue generated from this query is 1845889.2400000007 from 'Male' customers in 'Electronics' .In this objective Sum is used for find the total revenue. Right Join is used for join the two table Transactons and Customers. Where is used for filter the data.
+ The total revenue generated from this query is 10940711.079999957 from 'Male' customers in 'Electronics' .In this objective Sum is used for find the total revenue. Right Join is used for join the two table Transactons and Customers. Where is used for filter the data.
 
 
 ### 10  What is the percenateg of sales and returns by product sub category; display only top  5 sub categories in terms of sales?
@@ -486,13 +486,13 @@ ORDER BY averages DESC;
 
 
 
+The query calculates the average transaction amount for each product category from the 'Transactions' table, joining with 'prod_category' based on matching product category codes. The results are filtered to include only product categories with an average transaction amount greater than the overall average transaction amount across all categories.
 
 
 
 
 
-
-### Business Objective: Find the average revenue by each subcategory for the categories which among the top 5 categories in terms of quanity sold
+### Business Objective 15: Find the average revenue by each subcategory for the categories which among the top 5 categories in terms of quanity sold
 
 SELECT prod_cat,COUNT(Qty) AS quantity_sold FROM transactions T 
 INNER JOIN prod_category P 
@@ -520,3 +520,17 @@ ORDER BY case WHEN prod_cat = 'Books' THEN 1
 
 
 ![Screenshot (549)](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/a70167cf-63c5-4741-9ab2-9eaabd3f212d)
+
+
+According to the result we get the average and total revenue by each subcategory for the categories which are among top 5 categories. In this objective inner Join is used for join the two table Transactons and Prod_cat_info. Control flow function Case is used for finding the data. Where is used for filtering the data. Group by and Order by used for sorting the data.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
+# Conclusion
+----------------------------------------------------------------------------------------------------------------------------
+The analysis shows the various aspects of customers and the trends.Theis project exhibited the most popular products and the revenue of the products. Most frequently used channel for Transaction is e_shop and This information can assist other channel to improve their area and make customer choice. Home and kitchen product category has seen the maximum value of returns in the last 3 months of transactions and it shows the customers interest in this product. It increase the marketing and growth of the product.Analysis shows the growth in sales revenue over the past years. our e-commerce retail data analysis has provided valuable insights that can inform strategic decision-making and drive business growth. By these insights and recommendations, we are poised to enhance the customer experience, optimize marketing efforts, and maximize revenue potential.
+
+
+
