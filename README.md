@@ -1,6 +1,9 @@
 # E-COMMERCE RETAIL DATA ANALYSIS
 E-commerce retail data analysis refers to the process of examining and interpreting data related to online reatil operations to gain insights into customer behavior,sales trends,inventory management,marketing effectiveness and other aspects of business. Using the sql to extract,transform, and analyze data from ecommerce datasets stored on GitHub repositories. This approach entails querying tables containing information such as customer orders,product details,sales transactions,identify aptterns and ehance overall business performance withing the ecomerce retail sector.
 
+![ecommerce](https://github.com/kajol105/Ecommerce-retail-analysis-/assets/55199887/b4fca85d-945d-4483-b3e7-1aa6bb75b6fe)
+
+
 # DATASETS: Customer.xlsx,Transactions.xlsx,Prod_cat_info.xlsx
 
 # Customers:
